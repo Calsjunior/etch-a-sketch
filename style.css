@@ -5,15 +5,19 @@
 }
 
 #grid-container {
-    height: 100vh;
+    height: 480px;
+    width: 480px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.grid-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-row {
-    height: 30px;
-    width: 30px;
+    flex: 1;
     border: 1px solid black;
 }
 
