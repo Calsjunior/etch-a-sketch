@@ -16,7 +16,7 @@ function hoverGrid() {
     const gridRows = document.querySelectorAll(".grid-row");
     gridRows.forEach((gridRow) => {
         gridRow.addEventListener("mouseover", () => {
-            gridRow.style.background = "red";
+            gridRow.classList.add("hovered");
         });
     });
 }
