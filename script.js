@@ -1,5 +1,18 @@
+let size = 0;
+const input = document.querySelector("#grid-size");
+const button = document.querySelector("button");
+const gridContainer = document.querySelector("#grid-container");
+button.addEventListener("click", (event) => {
+    event.preventDefault();
+    size = input.value;
+
+    gridContainer.innerHTML = "";
+
+    makeGrid(size);
+    hoverGrid();
+});
+
 function makeGrid(size) {
-    const gridContainer = document.querySelector("#grid-container");
     for (let i = 0; i < size; i++) {
         const column = document.createElement("div");
         column.classList.add("grid-column");
@@ -20,6 +33,3 @@ function hoverGrid() {
         });
     });
 }
-
-makeGrid(16);
-hoverGrid();

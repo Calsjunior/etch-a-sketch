@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+#input {
+    border: none;
+    margin: 10px;
+}
+
 #grid-container {
     height: 480px;
     width: 480px;
