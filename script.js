@@ -5,6 +5,10 @@ const gridContainer = document.querySelector("#grid-container");
 const displaySize = document.querySelector(".display-size");
 button.addEventListener("click", (event) => {
     event.preventDefault();
+    if (input.value > 100) {
+        alert("Size cannot be above 100");
+        return;
+    }
     size = input.value;
 
     displaySize.textContent = `${input.value} x ${input.value}`;
