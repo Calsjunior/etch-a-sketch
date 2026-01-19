@@ -2,11 +2,14 @@ let size = 0;
 const input = document.querySelector("#grid-size");
 const button = document.querySelector("button");
 const gridContainer = document.querySelector("#grid-container");
+const displaySize = document.querySelector(".display-size");
 button.addEventListener("click", (event) => {
     event.preventDefault();
     size = input.value;
 
-    gridContainer.innerHTML = "";
+    displaySize.textContent = `${input.value} x ${input.value}`;
+    input.value = "";
+    gridContainer.textContent = "";
 
     makeGrid(size);
     hoverGrid();
