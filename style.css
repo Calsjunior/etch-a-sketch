@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-#input {
+.grid-size {
     border: none;
     margin: 10px;
 }
 
-#grid-container {
+.grid-container {
     height: 480px;
     width: 480px;
     display: flex;

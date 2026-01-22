@@ -1,7 +1,7 @@
 let size = 0;
-const input = document.querySelector("#grid-size");
+const input = document.querySelector(".grid-size");
 const button = document.querySelector("button");
-const gridContainer = document.querySelector("#grid-container");
+const gridContainer = document.querySelector(".grid-container");
 const displaySize = document.querySelector(".display-size");
 button.addEventListener("click", (event) => {
     event.preventDefault();
