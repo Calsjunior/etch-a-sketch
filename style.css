@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +12,20 @@ body {
 }
 
 #title {
+    font-family: "Pinyon Script", sans-serif;
+    font-size: 24px;
+    letter-spacing: 4px;
     text-align: center;
+    background-color: darkred;
     color: yellow;
+    padding: 20px;
+}
+
+.sketch-container {
+    height: 100%;
+    border: 80px solid darkred;
+    border-top: none;
+
 }
 
 .sketch-wrapper {
