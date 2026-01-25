@@ -4,6 +4,7 @@ const addSizeButton = document.querySelector("button");
 const gridContainer = document.querySelector(".grid-container");
 const displayGridSize = document.querySelector(".display-size");
 const colorInput = document.querySelector(".color-picker");
+colorInput.value = "";
 
 function makeGrid(size) {
     for (let i = 0; i < size; i++) {
@@ -30,8 +31,8 @@ addSizeButton.addEventListener("click", (event) => {
         alert("Size cannot be above 100");
         return;
     }
-    size = inputGridSize.value;
 
+    size = inputGridSize.value;
     displayGridSize.textContent = `${inputGridSize.value} x ${inputGridSize.value}`;
     inputGridSize.value = "";
     gridContainer.textContent = "";
