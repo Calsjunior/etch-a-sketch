@@ -60,6 +60,7 @@ addSizeButton.addEventListener("click", (event) => {
     }
 
     size = inputGridSize.value;
+    displayGridSize.style.visibility = "visible";
     displayGridSize.textContent = `${inputGridSize.value} x ${inputGridSize.value}`;
     inputGridSize.value = "";
 

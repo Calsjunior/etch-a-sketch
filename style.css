@@ -17,6 +17,9 @@ body {
     border-top: none;
     border-bottom: none;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #title {
@@ -33,12 +36,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 535px;
 }
 
 .grid-size {
     border: none;
     margin: 10px;
+}
+
+.display-size {
+    visibility: hidden;
 }
 
 .grid-container {
@@ -62,7 +68,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: darkred;
-    height: 130px;
+    padding: 10px;
 }
 
 .color-mode label {
