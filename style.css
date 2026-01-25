@@ -33,6 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 535px;
 }
 
 .grid-size {
@@ -57,10 +58,31 @@ body {
     border: 1px solid black;
 }
 
-.grid-row.hovered {
-    background-color: black;
+.color-mode {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkred;
+    height: 130px;
 }
 
-.color-picker {
+.color-mode label {
+    color: #fdfdfd;
+
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-picker,
+.rainbow-mode {
+    width: 80px;
+    height: 80px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.rainbow-mode {
+    background-color: black;
 }
