@@ -11,6 +11,14 @@ body {
     height: 100vh;
 }
 
+.sketch-container {
+    height: 100%;
+    border: 120px solid darkred;
+    border-top: none;
+    border-bottom: none;
+
+}
+
 #title {
     font-family: "Pinyon Script", sans-serif;
     font-size: 24px;
@@ -18,14 +26,7 @@ body {
     text-align: center;
     background-color: darkred;
     color: yellow;
-    padding: 20px;
-}
-
-.sketch-container {
-    height: 100%;
-    border: 80px solid darkred;
-    border-top: none;
-
+    padding: 25px;
 }
 
 .sketch-wrapper {
@@ -58,4 +59,8 @@ body {
 
 .grid-row.hovered {
     background-color: black;
+}
+
+.color-picker {
+    display: flex;
 }
