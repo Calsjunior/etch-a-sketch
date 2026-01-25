@@ -33,10 +33,10 @@ function makeGrid(size) {
 }
 
 function hoverGrid() {
-    const gridRows = document.querySelectorAll(".grid-row");
-    gridRows.forEach((gridRow) => {
-        gridRow.addEventListener("mouseover", () => {
-            gridRow.classList.add("hovered");
-        });
+    const gridContainer = document.querySelector(".grid-container");
+    gridContainer.addEventListener("mouseover", (event) => {
+        if (event.target.classList.contains("grid-row")) {
+            event.target.classList.add("hovered");
+        }
     });
 }
