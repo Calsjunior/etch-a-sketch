@@ -91,3 +91,8 @@ body {
 .sketch__button:active {
     transform: translateY(2px);
 }
+
+.sketch__display {
+    color: #444;
+    letter-spacing: 0.1rem;
+}
