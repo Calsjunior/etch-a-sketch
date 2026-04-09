@@ -8,32 +8,36 @@
         <script src="script.js" defer></script>
     </head>
     <body>
+        <div class="sketch">
+            <header class="sketch__header">
+                <h1 class="sketch__title">Etch-a-Sketch</h1>
+            </header>
 
-        <div class="sketch-container">
-            <div id="title">
-                <h1>Etch-a-Sketch</h1>
+            <div class="sketch__body">
+                <input class="sketch__input" placeholder="Enter grid size" type="text">
+                <button class="sketch__button" type="button">Add size</button>
+
+                <p class="sketch__display">None</p>
+
+                <div class="grid"></div>
             </div>
 
-            <div class="sketch-wrapper">
-                <form>
-                    <input autofocus class="grid-size" placeholder="Enter grid size" type="text">
-                    <button>Add size</button>
-                </form>
+            <footer class="sketch__controls control">
+                <div class="control__item">
+                    <label class="control__label" for="color">Pick a color</label>
+                    <input class="control__input" type="color" id="color">
+                </div>
 
-                <p class="display-size">None</p>
-
-                <div class="grid-container"></div>
-            </div>
-
-            <div class="color-mode">
-                <label>Pick a color
-                    <input class="color-picker" type="color">
-                </label>
-                <label>Enable rainbow mode
-                    <div class="rainbow-mode"></div>
-                </label>
-            </div>
+                <div class="control__item">
+                    <label class="control__label" for="rainbow">
+                        Enable rainbow mode
+                    </label>
+                    <div
+                        class="control__input control__input--rainbow"
+                        id="rainbow"
+                    ></div>
+                </div>
+            </footer>
         </div>
-
     </body>
 </html>

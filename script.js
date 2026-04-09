@@ -1,67 +1,79 @@
 let size = 0;
 let currentColorMode = "COLOR";
 
-const inputGridSize = document.querySelector(".grid-size");
-const addSizeButton = document.querySelector("button");
-const gridContainer = document.querySelector(".grid-container");
-const displayGridSize = document.querySelector(".display-size");
-const colorMode = document.querySelector(".color-mode");
-const rainbowMode = document.querySelector(".rainbow-mode");
-const colorInput = document.querySelector(".color-picker");
-colorInput.value = "";
+const inputGridSize = document.querySelector(".sketch__input");
+const addSizeButton = document.querySelector(".sketch__button");
+const gridContainer = document.querySelector(".grid");
+const displayGridSize = document.querySelector(".sketch__display");
+const controls = document.querySelector(".sketch__controls");
+const colorInput = document.querySelector(".control__input");
+const rainbowMode = document.querySelector(".control__input--rainbow");
+
+colorInput.value = "#000000";
 
 function makeGrid(size) {
     gridContainer.textContent = "";
 
     for (let i = 0; i < size; i++) {
         const column = document.createElement("div");
-        column.classList.add("grid-column");
+        column.classList.add("grid__column");
+
         for (let j = 0; j < size; j++) {
-            const row = document.createElement("div");
-            row.classList.add("grid-row");
-            column.appendChild(row);
+            const cell = document.createElement("div");
+            cell.classList.add("grid__cell");
+            column.appendChild(cell);
         }
         gridContainer.appendChild(column);
     }
 }
 
 function randomRgb() {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-colorMode.addEventListener("click", (event) => {
-    if (event.target.classList.contains("color-picker")) {
+controls.addEventListener("click", (event) => {
+    // Check if the user clicked the color picker
+    if (event.target === colorInput) {
         currentColorMode = "COLOR";
-    } else if (event.target.classList.contains("rainbow-mode")) {
+    }
+    // Check if the user clicked the rainbow swatch
+    else if (event.target === rainbowMode) {
         currentColorMode = "RAINBOW";
     }
 });
 
 gridContainer.addEventListener("mouseover", (event) => {
-    if (event.target.classList.contains("grid-row")) {
-        if (currentColorMode == "COLOR") {
-            event.target.style.backgroundColor = colorInput.value;
-        } else if (currentColorMode == "RAINBOW" && !event.target.style.backgroundColor) {
-            // Prevents redrawing on already drawn color only in rainbow mode
-            event.target.style.backgroundColor = randomRgb();
-            rainbowMode.style.backgroundColor = event.target.style.backgroundColor;
+    const target = event.target;
+
+    if (target.classList.contains("grid__cell")) {
+        if (currentColorMode === "COLOR") {
+            target.style.backgroundColor = colorInput.value;
+        } else if (currentColorMode === "RAINBOW") {
+            const color = randomRgb();
+            target.style.backgroundColor = color;
+            rainbowMode.style.backgroundColor = color;
         }
     }
 });
 
-addSizeButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (inputGridSize.value > 100) {
-        alert("Size cannot be above 100");
+addSizeButton.addEventListener("click", () => {
+    const input = parseInt(inputGridSize.value);
+
+    if (Number.isNaN(input) || input <= 0) {
+        alert("Please enter a valid number");
+        return;
+    }
+    if (input > 100) {
+        alert("Size cannot be above 100 to prevent lag!");
         return;
     }
 
-    size = inputGridSize.value;
+    size = input;
     displayGridSize.style.visibility = "visible";
-    displayGridSize.textContent = `${inputGridSize.value} x ${inputGridSize.value}`;
+    displayGridSize.textContent = `${size} x ${size}`;
     inputGridSize.value = "";
 
     makeGrid(size);

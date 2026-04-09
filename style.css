@@ -1,94 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    background-color: gray;
     height: 100vh;
+    background-color: gray;
 }
 
-.sketch-container {
-    height: 100%;
-    border: 120px solid darkred;
-    border-top: none;
-    border-bottom: none;
-
+.sketch {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
+    border-right: 120px solid darkred;
+    border-left: 120px solid darkred;
 }
 
-#title {
-    font-family: "Pinyon Script", sans-serif;
-    font-size: 24px;
-    letter-spacing: 4px;
+.sketch__header {
+    padding: 25px;
     text-align: center;
     background-color: darkred;
-    color: yellow;
-    padding: 25px;
 }
 
-.sketch-wrapper {
+.sketch__title {
+    font-family: "Pinyon Script", sans-serif;
+    font-size: 24px;
+    color: yellow;
+    letter-spacing: 4px;
+}
+
+.sketch__body {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.grid-size {
-    border: none;
+.sketch__input {
+    padding: 5px;
     margin: 10px;
+    border: none;
 }
 
-.display-size {
+.sketch__display {
     visibility: hidden;
+    margin-bottom: 10px;
 }
 
-.grid-container {
-    height: 480px;
+.grid {
+    display: flex;
     width: 480px;
-    display: flex;
+    height: 480px;
 }
 
-.grid-column {
-    flex: 1;
+.grid__column {
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 
-.grid-row {
+.grid__cell {
     flex: 1;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.color-mode {
+.sketch__controls {
     display: flex;
     justify-content: space-between;
-    background-color: darkred;
     padding: 10px;
+    background-color: darkred;
 }
 
-.color-mode label {
-    color: #fdfdfd;
-
+.control__item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: #fdfdfd;
+    cursor: pointer;
 }
 
-.color-picker,
-.rainbow-mode {
+.control__input {
     width: 80px;
     height: 80px;
     border: 1px solid white;
     border-radius: 50%;
 }
 
-.rainbow-mode {
+.control__input--rainbow {
     background-color: black;
 }
