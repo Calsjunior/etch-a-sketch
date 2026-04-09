@@ -35,6 +35,9 @@ body {
 }
 
 .sketch {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     width: min(56rem, 95vw);
     padding: 2.4rem;
     background-color: rgb(var(--color-bg));
