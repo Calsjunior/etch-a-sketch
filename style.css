@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 
 :root {
-    --color-cream: #c8c8b0;
-    --color-gray: #a8a8a8;
-    --color-red: #8b0000;
-    --color-lightgray: #888888;
-    --color-yellow: #edd15f;
+    --color-cream: 200, 200, 176;
+    --color-gray: 168, 168, 168;
+    --color-red: 139, 0, 0;
+    --color-lightgray: 136, 136, 136;
+    --color-yellow: 237, 209, 95;
 
     --color-bg: var(--color-red);
     --color-body: var(--color-gray);
@@ -36,8 +36,8 @@ body {
 .sketch {
     width: min(56rem, 95vw);
     padding: 2.4rem;
-    background-color: var(--color-bg);
-    border: 3px solid var(--color-bg);
+    background-color: rgb(var(--color-bg));
+    border: 3px solid rgb(var(--color-bg));
     border-radius: 2.4rem;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .sketch__body {
     padding: 1.6rem;
-    background-color: var(--color-body);
+    background-color: rgb(var(--color-body));
     border-radius: 1.2rem;
 }
 
@@ -64,8 +64,8 @@ body {
     flex-direction: row;
     width: 100%;
     min-height: 46rem;
-    background-color: var(--color-grid);
-    border: 3px solid var(--color-border);
+    background-color: rgb(var(--color-grid));
+    border: 3px solid rgb(var(--color-border));
     border-radius: 0.6rem;
 }
 
@@ -77,7 +77,7 @@ body {
 
 .grid__cell {
     flex: 1;
-    border: 1px solid #8888884d;
+    border: 1px solid rgba(var(--color-border), 0.3);
 }
 
 .sketch__input,
@@ -85,7 +85,7 @@ body {
     padding: 0.7rem 1.2rem;
     font-size: 1.4rem;
     outline: none;
-    border: 2px solid var(--color-border);
+    border: 2px solid rgb(var(--color-border));
     border-radius: 0.6rem;
 }
 
