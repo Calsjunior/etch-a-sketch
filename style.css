@@ -6,54 +6,53 @@
     margin: 0;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
-    height: 100vh;
-    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max(400px, 100vw);
+    min-height: 100vh;
+    font-size: 1.6rem;
 }
 
 .sketch {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    border-right: 120px solid darkred;
-    border-left: 120px solid darkred;
+    width: min(56rem, 95vw);
+    padding: 2.4rem;
+    background-color: #8b0000;
+    border: 3px solid #8b0000;
+    border-radius: 2.4rem;
 }
 
 .sketch__header {
-    padding: 25px;
     text-align: center;
-    background-color: darkred;
 }
 
 .sketch__title {
-    font-family: "Pinyon Script", sans-serif;
-    font-size: 24px;
-    color: yellow;
-    letter-spacing: 4px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #edd15f;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
 }
 
 .sketch__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sketch__input {
-    padding: 5px;
-    margin: 10px;
-    border: none;
-}
-
-.sketch__display {
-    visibility: hidden;
-    margin-bottom: 10px;
+    padding: 1.6rem;
+    background-color: #a8a8a8;
+    border-radius: 1.2rem;
 }
 
 .grid {
     display: flex;
-    width: 480px;
-    height: 480px;
+    flex-direction: row;
+    width: 100%;
+    min-height: 46rem;
+    background-color: #c8c8b0;
+    border: 3px solid #888888;
+    border-radius: 0.6rem;
 }
 
 .grid__column {
@@ -64,33 +63,27 @@ body {
 
 .grid__cell {
     flex: 1;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid #8888884d;
 }
 
-.sketch__controls {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: darkred;
+.sketch__input,
+.sketch__button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1.4rem;
+    outline: none;
+    border: 2px solid #888;
+    border-radius: 0.6rem;
 }
 
-.control__item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    color: #fdfdfd;
+.sketch__input {
+    width: 16rem;
+}
+
+.sketch__button {
+    margin-left: 0.8rem;
+    font-weight: bold;
+    color: #fff;
     cursor: pointer;
-}
-
-.control__input {
-    width: 80px;
-    height: 80px;
-    border: 1px solid white;
-    border-radius: 50%;
-}
-
-.control__input--rainbow {
-    background-color: black;
+    background-color: #333;
+    border-color: #222;
 }
