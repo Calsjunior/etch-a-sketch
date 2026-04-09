@@ -59,6 +59,12 @@ gridContainer.addEventListener("mouseover", (event) => {
     }
 });
 
+inputGridSize.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        addSizeButton.click();
+    }
+});
+
 addSizeButton.addEventListener("click", () => {
     const input = parseInt(inputGridSize.value);
 
