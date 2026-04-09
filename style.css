@@ -6,6 +6,7 @@
     --color-red: 139, 0, 0;
     --color-lightgray: 136, 136, 136;
     --color-yellow: 237, 209, 95;
+    --color-white: 255, 255, 255;
 
     --color-bg: var(--color-red);
     --color-body: var(--color-gray);
@@ -109,4 +110,44 @@ body {
 .sketch__display {
     color: #444;
     letter-spacing: 0.1rem;
+}
+
+.sketch__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.6rem;
+}
+
+.control__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.control__label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgba(var(--color-white), 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.control__input {
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    appearance: none;
+    cursor: pointer;
+    border: 4px solid rgb(var(--color-border));
+    border-radius: 50%;
+}
+
+.control__input:hover {
+    transform: rotate(30deg) scale(1.05);
+}
+
+.control__input:active {
+    transform: rotate(60deg) scale(0.97);
 }
